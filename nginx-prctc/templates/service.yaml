@@ -9,5 +9,5 @@ spec:
   ports:
   - name: nginx-port
     protocol: TCP
-    port: { .Value.service.port }
-    targetPort: { .Value.service.targetPort }
+    port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}

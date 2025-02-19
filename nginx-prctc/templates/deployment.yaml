@@ -6,7 +6,7 @@ metadata:
       tier: frntnd
       app: nginx
 spec:
-  replicas: { .Value.deployment.replicas }
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
       tier: frntnd
@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:{ .Value.deployment.imageVersion }
+        image: nginx:{{ .Values.deployment.imageVersion }}
