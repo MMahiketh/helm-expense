@@ -3,6 +3,7 @@ apiVersion: v1
 metadata:
   name: test
 spec:
+  type: NodePort
   selector:
     tier: frntnd
     app: nginx
@@ -11,3 +12,4 @@ spec:
     protocol: TCP
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.targetPort }}
+    nodePort: {{ .Values.service.nodePort }}
