@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+    name: test
+    labels:
+      tier: frntnd
+      app: nginx
+spec:
+  replicas: { .Value.deployment.replicas }
+  selector:
+    matchLabels:
+      tier: frntnd
+      app: nginx
+  template:
+    metadata:
+      labels:
+        tier: frntnd
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:{ .Value.deployment.imageVersion }

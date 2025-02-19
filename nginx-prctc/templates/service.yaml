@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: test
+spec:
+  selector:
+    tier: frntnd
+    app: nginx
+  ports:
+  - name: nginx-port
+    protocol: TCP
+    port: { .Value.service.port }
+    targetPort: { .Value.service.targetPort }
