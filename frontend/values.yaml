@@ -5,7 +5,7 @@ hpa:
 deployment:
   desiredReplicas: 2
   imageVersion: v1
-Service:
+service:
   type: LoadBalancer
   port: 80
   targetPort: 80
