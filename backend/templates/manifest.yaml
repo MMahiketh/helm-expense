@@ -1,6 +1,6 @@
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v1
-medatada:
+metadata:
   name: backend
   namespace: expense
 spec:
