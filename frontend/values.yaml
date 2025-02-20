@@ -1,0 +1,12 @@
+hpa:
+  minReplicas: 1
+  maxReplicas: 10
+  cpuUtilization: 15
+deployment:
+  desiredReplicas: 2
+  imageVersion: v1
+Service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 30011
