@@ -25,7 +25,7 @@ spec:
       tier: api
       project: expense
   template:
-    medatada:
+    metadata:
       labels:
         app: backend
         tier: api
@@ -63,7 +63,7 @@ spec:
 ---
 kind: ConfigMap
 apiVersion: v1
-medatada:
+metadata:
   name: backend
   namespace: expense
 data:
