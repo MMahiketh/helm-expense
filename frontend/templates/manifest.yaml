@@ -127,7 +127,7 @@ metadata:
   name: frontend
   namespace: expense
 spec:
-  type: {{ .Values.service.type }}
+  # type: {{ .Values.service.type }}
   selector:
     app: frontend
     tier: web
@@ -137,4 +137,15 @@ spec:
     protocol: TCP
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.targetPort }}
-    nodePort: {{ .Values.service.nodePort }}
+---
+kind: TargetGroupBinding
+apiVersion: elbv2.k8s.aws/v1beta1
+metadata:
+  name: frontend
+  namespace: expense
+spec:
+  serviceRef:
+    name: frontend
+    port: {{ .Values.service.port }}
+  targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:339712874850:targetgroup/expense-dev/d7c6e8dcfbbc60f2
+  targetType: ip
