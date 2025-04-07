@@ -147,5 +147,5 @@ spec:
   serviceRef:
     name: frontend
     port: {{ .Values.service.port }}
-  targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:339712874850:targetgroup/expense-dev/d7c6e8dcfbbc60f2
+  targetGroupARN: {{ .Values.tgb.arn }}
   targetType: ip
