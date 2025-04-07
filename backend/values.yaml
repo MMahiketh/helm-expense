@@ -9,4 +9,4 @@ hpa:
   maxReplicas: 10
   cpuUtilization: 15
 configMap:
-  DB_HOST: mysql
+  DB_HOST: mysql-dev.mahdo.site
