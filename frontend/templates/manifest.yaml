@@ -133,10 +133,10 @@ spec:
     tier: web
     project: expense
   ports:
-  - name: http-port
+  - name: nginx-port
     protocol: TCP
     port: {{ .Values.service.port }}
-    targetPort: {{ .Values.service.targetPort }}
+    # targetPort: {{ .Values.service.targetPort }}
 ---
 kind: TargetGroupBinding
 apiVersion: elbv2.k8s.aws/v1beta1

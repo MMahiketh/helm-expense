@@ -9,6 +9,6 @@ service:
   type: LoadBalancer
   port: 8080
   targetPort: 8080
-  nodePort: 30011
+  # nodePort: 30011
 tgb:
   arn: arn:aws:elasticloadbalancing:us-east-1:339712874850:targetgroup/expense-dev/12fd98a4ff730489
